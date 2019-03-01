@@ -51,3 +51,48 @@ function getPraiseNumber () {
 	        }
         });
 }
+
+function visit () {
+    axios({
+          method: 'post',
+          url: `${api_prefix}visit`,
+          data: {}
+        })
+        .then(function(response) {
+          console.log('response:', response); 
+          alert(response.data);
+        })
+        .catch(function (error) {
+	        if (error.response) {
+	          console.log(error.response.data);
+	          alert(error.response.data.message)
+	        } else if (error.request) {
+	          console.log(error.request);
+	        } else {
+	          console.log('Error', error.message);
+	        }
+        });
+}
+
+function praise () {
+    axios({
+          method: 'post',
+          url: `${api_prefix}praise`,
+          data: {}
+        })
+        .then(function(response) {
+          console.log('response:', response); 
+          alert(response.data);
+        })
+        .catch(function (error) {
+	        if (error.response) {
+	          console.log(error.response.data);
+	          alert(error.response.data.message)
+	        } else if (error.request) {
+	          console.log(error.request);
+	        } else {
+	          console.log('Error', error.message);
+	        }
+        });
+}
+
