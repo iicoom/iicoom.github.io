@@ -6,7 +6,7 @@ $(document).ready(function()
   getPraiseNumber()
 });
 
-window.api_prefix = 'http://www.iwannerfuck.xyz/api/';
+window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
 
 function getVisitNumber () {
     axios({
