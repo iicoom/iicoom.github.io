@@ -3770,3 +3770,8 @@ hr {
 .mylink:hover {
 	color: #fab001!important;
 }
+.myimage {
+	width: 90%;
+	height: 90%;
+}
+

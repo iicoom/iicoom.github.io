@@ -5,178 +5,179 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Vultr vps搭建 ss 代理</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="手把手教你vps搭建属于自己的ss教程，开始科学上网吧（利用vultr，Google, 看youtube1080p无压力）">
-    <meta name="author" content="Laomao">
-    <meta name="keyword" content="vpn, vps, shadowsockets, vpn-server, vultr, centos, ss">
-    <link rel="icon" href="./images/avatar.jpeg" type="image/gif" >
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>Vultr vps搭建 ss 代理</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="手把手教你vps搭建属于自己的ss教程，开始科学上网吧（利用vultr，Google, 看youtube1080p无压力）">
+	<meta name="author" content="Laomao">
+	<meta name="keyword" content="vpn, vps, shadowsockets, vpn-server, vultr, centos, ss">
+	<link rel="icon" href="./images/avatar.jpeg" type="image/gif" >
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="https://www.vultr.com/media/logo_onwhite.png" alt="" /></span>
-						<h1>Vultr vps搭建属于自己的ss 代理</h1>
-						<p>手把手教你vps搭建属于自己的ss教程，开始科学上网吧（利用vultr，Google, 看youtube1080p无压力）</p>
-					</header>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="https://www.vultr.com/media/logo_onwhite.png" alt="" /></span>
+			<h1>Vultr vps搭建属于自己的ss 代理</h1>
+			<p>手把手教你vps搭建属于自己的ss教程，开始科学上网吧（利用vultr，Google, 看youtube1080p无压力）</p>
+		</header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">1.选择优质的VPS</a></li>
-							<li><a href="#first">2.注册账号</a></li>
-							<li><a href="#second">3.搭建服务</a></li>
-              <li><a href="#third">4.登录服务器生成SS账号</a></li>
-							<li><a href="#fouth">5.客户端设置</a></li>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">1.选择优质的VPS</a></li>
+				<li><a href="#first">2.注册账号</a></li>
+				<li><a href="#second">3.搭建服务</a></li>
+				<li><a href="#third">4.登录服务器生成SS账号</a></li>
+				<li><a href="#fouth">5.客户端设置</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>1.选择优质的VPS</h2>
+						</header>
+						<p>简单介绍：Vultr作为全球最大的游戏主机提供商背景之一，上线之后以高质的性价比、遍布全球16个数据中心，以及新注册用户不定期有美金赠送，吸引广大的用户。<br>而且操作简单方便，一键部署，性能目前测试非常不错。支付是采用充值的方式，支持国内 <b>支付宝</b> 支付，<b>微信扫码</b> 支付。按照VPS开通使用情况每小时扣款，不象很多其他VPS要求一次买2年或者1年的，非常人性化。</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
 						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>1.选择优质的VPS</h2>
-										</header>
-										<p>简单介绍：Vultr作为全球最大的游戏主机提供商背景之一，上线之后以高质的性价比、遍布全球16个数据中心，以及新注册用户不定期有美金赠送，吸引广大的用户。<br>而且操作简单方便，一键部署，性能目前测试非常不错。支付是采用充值的方式，支持国内 <b>支付宝</b> 支付，<b>微信扫码</b> 支付。按照VPS开通使用情况每小时扣款，不象很多其他VPS要求一次买2年或者1年的，非常人性化。</p>
-										<ul class="actions">
-											<li><a href="#" class="button">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>
-
-						<!-- First Section -->
-							<section id="first" class="main">
-								<header class="major">
-									<h2>2.注册vultr账号</h2>
-								</header>
-                <p style="color: #222; font-weight: bolder; margin-bottom: 1em">优惠注册地址（点击下面链接注册会获得50美金账户余额-官方最新活动-进行中）</p>
-                <a href="https://www.vultr.com/?ref=7771051-4F" class="mylink" target="blank">Get started in the Vultr SSD Cloud!</a>
-                <p>进入网站之后填写注册邮箱、密码 （最少10位，要同时有数字和大小写字母） ，点击create account。</p>
-                <img src="https://segmentfault.com/img/remote/1460000015067120?w=951&h=463" alt="">
-                <p>登陆注册邮箱会收到验证邮件</p>
-                <img src="https://segmentfault.com/img/remote/1460000015067121?w=627&h=193" alt="">
-                <p>点击验证邮件里的 蓝色方框内的　Verify Your E-mail 验证 。</p>
-                <p>回到Vulrt，在Billing界面按照下图选择，直接点击 蓝色方框内的Pay with Alipay 进行激活就可以了。</p>
-                <img src="https://segmentfault.com/img/remote/1460000015067122?w=1345&h=498" alt="">
-                <p>这时就可以用alipay（支付宝），相信大家轻松搞定。</p>
-							<!-- 	<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer> -->
-							</section>
-
-						<!-- Second Section -->
-							<section id="second" class="main">
-								<header class="major">
-									<h2>3.搭建服务</h2>
-								</header>
-                <p>点击左边的server选项，点击加好按钮选择服务器节点位置以及相关配置，按下图依次选择配置：</p>
-                <img src="https://segmentfault.com/img/remote/1460000017266184?w=2350&h=1340" alt="">
-                <p>然后选择操作系统=></p>
-                <img src="https://segmentfault.com/img/remote/1460000017266185?w=2486&h=1504" alt="">
-                <p>然后会自动跳转到Servers界面=></p>
-                <img src="https://segmentfault.com/img/remote/1460000017266186?w=2880&h=1250" alt="">
-                <p>记录服务器相关信息=></p>
-                <img src="https://segmentfault.com/img/remote/1460000017266187?w=2870&h=1146" alt="">
-							</section>
-
-						<!-- Get Started -->
-							<section id="third" class="main">
-								<header class="major">
-									<h2>4.使用ssh 终端连接到服务器、生成ss账号</h2>
-								</header>
-                <p><b>4.1. 下载putty：</b><a href="http://pan.baidu.com/s/1jI0T5Fw" target="blank">http://pan.baidu.com/s/1jI0T5Fw</a> 解压运行putty.exe，</p>
-                <img src="https://segmentfault.com/img/remote/1460000015067130?w=602&h=506" alt="">
-                <p>填入刚建好的主机地址，主机地址在哪里查看？回到前面，第三步 搭建服务 最后一张图查看。其他不用动，点击打开</p>
-                <img src="https://segmentfault.com/img/remote/1460000015067131?w=598&h=308" alt="">
-                <p>​如果这里有对话框弹出，选择是，然后在全黑的屏幕上输入 root ，回车。等五秒，按提示输入vps的密码，(注意：这里强烈建议你直接复制粘贴密码, 不建议手动输入密码,容易出错：</p>
-                <img src="https://segmentfault.com/img/remote/1460000015067133?w=720&h=455" alt="">
-                <p><b>4.2 安装shadowsocks</b></p>
-                <h5>第一条命令</h5>
-                <code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
-                <h5>等待下载完成</h5>
-                <h5>第二条命令</h5>
-                <code>chmod +x shadowsocks.sh</code>
-                <h5>第三条命令</h5>
-                <code>./shadowsocks.sh 2>&1 | tee shadowsocks.log</code>
-                <p><strong>中间会提示你输入你的SS SERVER的账号，和端口。不输入就是默认。跑完命令后会出来你的SS客户端的信息。特别注意，由于iphone端的目前只支持到cfb，所以我们选择aes-256-cfb，即7，这一步按回车继续然后需要几分钟的安装过程，请耐心等待出现下面的画面！</strong></p>
-                <img src="https://segmentfault.com/img/remote/1460000015067134?w=720&h=455" alt="">
-                <p>请立即copy下来加以保存。记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method。这时你的专属ss已经搭好了，开始使用吧。</p>
-							</section>
-
-              <!-- Second Section -->
-              <section id="fouth" class="main">
-                <header class="major">
-                  <h2>5.客户端设置</h2>
-                </header>
-                <p>提供一个集成了以上客户端的下载地址</p><a href="https://shadowsocks.org/en/download/clients.html">Shadowsockets client</a>
-                <p>点击左边的server选项，点击加好按钮选择服务器节点位置以及相关配置，按下图依次选择配置：</p>
-                <p>考虑到这个网站需要翻墙才能访问，提供几个百度云备用下载地址如下：</p>
-                <a href="https://pan.baidu.com/s/1X1rjcHP3SB6EW6pcb2fqPQ">Mac</a>
-                <a href="https://pan.baidu.com/s/1TQ8mAO_txAzOZJKBHynbVA">Windows</a>
-                <a href="https://pan.baidu.com/s/1HTmOUuNYW3TLD8qUoGN9nw">安卓</a>
-                <a href="https://itunes.apple.com/app/outline-app/id1356177741">IOS</a>
-                <p>这样就翻墙成功了，可以Google和YouTube啦</p>
-                <img src="https://segmentfault.com/img/remote/1460000017182908?w=2560&h=1426" alt="">
-              </section>
-
 					</div>
+					<span class="image"><a href="https://www.vultr.com/?ref=7771051-4F" target="blank"><img src="./images/banner.png" width="300" height="250"></a></span>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+				</div>
+			</section>
 
-			</div>
+			<!-- First Section -->
+			<section id="first" class="main">
+				<header class="major">
+					<h2>2.注册vultr账号</h2>
+				</header>
+				<p style="color: #222; font-weight: bolder; margin-bottom: 1em">优惠注册地址（点击下面链接注册会获得50美金账户余额-官方最新活动-进行中）</p>
+				<a href="https://www.vultr.com/?ref=7771051-4F" class="mylink" target="blank">Get started in the Vultr SSD Cloud!</a>
+				<p>进入网站之后填写注册邮箱、密码 （最少10位，要同时有数字和大小写字母） ，点击create account。</p>
+				<img src="./images/account.png" class="myimage" alt="">
+				<p><b>接下来会跳转到充值页面=></b></p>
+				<img src="./images/topup.png" class="myimage" alt="">
+				<p><b>点击付款，跳转到扫码付款页面=></b></p>
+				<img src="./images/paycode.png" class="myimage" alt="">
+				<p>这时就可以用alipay（支付宝），相信大家轻松搞定。</p>
+				<!-- 	<footer class="major">
+					<ul class="actions special">
+						<li><a href="generic.html" class="button">Learn More</a></li>
+					</ul>
+				</footer> -->
+			</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<!-- Second Section -->
+			<section id="second" class="main">
+				<header class="major">
+					<h2>3.搭建服务</h2>
+				</header>
+				<img src="./images/instance.png" class="myimage" alt="">
+				<p><b>然后选择服务器节点位置以及相关配置，按下图依次选择配置：</b></p>
+				<img src="./images/location.png" class="myimage" alt="">
+				<p><b>然后选择操作系统、以及收费级别=></b></p>
+				<img src="./images/price.png" class="myimage" alt="">
+				<p><b>然后会自动跳转到Servers界面=></b></p>
+				<img src="./images/running.png" class="myimage" alt="">
+				<p><b>记录服务器相关信息=></b></p>
+				<img src="./images/password.png" class="myimage" alt="">
+			</section>
 
-	</body>
+			<!-- Get Started -->
+			<section id="third" class="main">
+				<header class="major">
+					<h2>4.使用ssh 终端连接到服务器、生成ss账号</h2>
+				</header>
+				<p><b>4.1. 下载putty：</b><a href="http://pan.baidu.com/s/1jI0T5Fw" target="blank">http://pan.baidu.com/s/1jI0T5Fw</a> 解压运行putty.exe，</p>
+				<img src="./images/putty.jpeg" style="width: 65%;height: 65%" alt="">
+				<p><b>填入刚建好的实例信息=></b></p>
+				<img src="./images/warning.jpeg" style="width: 65%;height: 65%" alt="">
+				<p>​如果这里有对话框弹出，选择是，然后在全黑的屏幕上输入 root ，回车。等五秒，按提示输入vps的密码，(注意：这里强烈建议你直接复制粘贴密码, 不建议手动输入密码,容易出错：</p>
+				<img src="./images/shell.jpeg" style="width: 65%;height: 65%" alt="">
+				<p><b>4.2 安装shadowsocks</b></p>
+				<h5>第一条命令</h5>
+				<code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
+				<h5>等待下载完成</h5>
+				<h5>第二条命令</h5>
+				<code>chmod +x shadowsocks.sh</code>
+				<h5>第三条命令</h5>
+				<code>./shadowsocks.sh 2>&1 | tee shadowsocks.log</code>
+				<p><strong>中间会提示你输入你的SS SERVER的账号，和端口。不输入就是默认。跑完命令后会出来你的SS客户端的信息。特别注意，由于iphone端的目前只支持到cfb，所以我们选择aes-256-cfb，即7，这一步按回车继续然后需要几分钟的安装过程，请耐心等待出现下面的画面！</strong></p>
+				<img src="https://segmentfault.com/img/remote/1460000015067134?w=720&h=455" alt="">
+				<p>请立即copy下来加以保存。记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method。这时你的专属ss已经搭好了，开始使用吧。</p>
+			</section>
+
+			<!-- Second Section -->
+			<section id="fouth" class="main">
+				<header class="major">
+					<h2>5.客户端设置</h2>
+				</header>
+				<p>提供一个集成了以上客户端的下载地址</p><a href="https://shadowsocks.org/en/download/clients.html">Shadowsockets client</a>
+				<p>点击左边的server选项，点击加好按钮选择服务器节点位置以及相关配置，按下图依次选择配置：</p>
+				<p>考虑到这个网站需要翻墙才能访问，提供几个百度云备用下载地址如下：</p>
+				<a href="https://pan.baidu.com/s/1X1rjcHP3SB6EW6pcb2fqPQ">Mac</a>
+				<a href="https://pan.baidu.com/s/1TQ8mAO_txAzOZJKBHynbVA">Windows</a>
+				<a href="https://pan.baidu.com/s/1HTmOUuNYW3TLD8qUoGN9nw">安卓</a>
+				<a href="https://itunes.apple.com/app/outline-app/id1356177741">IOS</a>
+				<p>这样就翻墙成功了，可以Google和YouTube啦</p>
+				<img src="./images/youtube.png" class="myimage" alt="">
+			</section>
+
+		</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<section>
+			<h2>Aliquam sed mauris</h2>
+			<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+			<ul class="actions">
+				<li><a href="generic.html" class="button">Learn More</a></li>
+			</ul>
+		</section>
+		<section>
+			<h2>Etiam feugiat</h2>
+			<dl class="alt">
+				<dt>Address</dt>
+				<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+				<dt>Phone</dt>
+				<dd>(000) 000-0000 x 0000</dd>
+				<dt>Email</dt>
+				<dd><a href="#">information@untitled.tld</a></dd>
+			</dl>
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+				<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+			</ul>
+		</section>
+		<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
