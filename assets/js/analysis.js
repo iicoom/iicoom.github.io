@@ -4,6 +4,7 @@ $(document).ready(function()
 {
   getVisitNumber()
   getPraiseNumber()
+  visit()
 });
 
 window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
@@ -15,8 +16,7 @@ function getVisitNumber () {
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
+          $('#visit_number').html(response.data)
         })
         .catch(function (error) {
 	        if (error.response) {
@@ -37,8 +37,7 @@ function getPraiseNumber () {
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
+          $('#praise_number').html(response.data)
         })
         .catch(function (error) {
 	        if (error.response) {
@@ -59,8 +58,6 @@ function visit () {
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
         })
         .catch(function (error) {
 	        if (error.response) {
@@ -81,8 +78,8 @@ function praise () {
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
+          // alert('谢谢你为我点赞')
+          getPraiseNumber()
         })
         .catch(function (error) {
 	        if (error.response) {

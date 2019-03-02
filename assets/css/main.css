@@ -3774,4 +3774,39 @@ hr {
 	width: 90%;
 	height: 90%;
 }
+.state_bar span {
+	border-radius: 5px;
+	padding: 2px 4px;
+	font-weight: bolder;
+	color: #fff;
+}
+.state_bar .type {
+	background-color: #288ce2;
+	margin-right: 15px;
+}
+.state_bar .tags {
+	background-color: rgba(253,234,123, 0.8);
+	color: green;
+}
+.state_bar .tags:hover {
+	background-color: green;
+	color: #fff;
+}
+.state_bar b{
+	margin-left: 20px;
+}
+
+.opration {
+	text-align: center;
+	padding: 50px 0;
+}
+.opration button {
+	background-color: #8CCA05 !important;
+	font-size: 16px;
+}
+.opration button i{
+	padding-left: 10px;
+}
+
+
 
