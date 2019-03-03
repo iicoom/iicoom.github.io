@@ -120,12 +120,14 @@
 				<img src="./images/shell.jpeg" style="width: 65%;height: 65%" alt="">
 				<p><b>4.2 安装shadowsocks</b></p>
 				<h5>第一条命令</h5>
-				<code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
-				<h5>等待下载完成</h5>
+				<pre>
+					<code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
+					<h5>等待下载完成</h5>
+				</pre>
 				<h5>第二条命令</h5>
-				<code>chmod +x shadowsocks.sh</code>
+				<pre><code>chmod +x shadowsocks.sh</code></pre>
 				<h5>第三条命令</h5>
-				<code>./shadowsocks.sh 2>&1 | tee shadowsocks.log</code>
+				<pre><code>./shadowsocks.sh 2>&1 | tee shadowsocks.log</code></pre>
 				<p><strong>中间会提示你输入你的SS SERVER的账号，和端口。不输入就是默认。跑完命令后会出来你的SS客户端的信息。特别注意，由于iphone端的目前只支持到cfb，所以我们选择aes-256-cfb，即7，这一步按回车继续然后需要几分钟的安装过程，请耐心等待出现下面的画面！</strong></p>
 				<img src="./images/ss_info.jpeg" style="width: 65%;height: 65%" alt="">
 				<p>请立即copy下来加以保存。记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method。这时你的专属ss已经搭好了，开始使用吧。</p>
