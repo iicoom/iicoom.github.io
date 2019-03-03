@@ -57,8 +57,10 @@ function praise () {
           data: {}
         })
         .then(function(response) {
-          // alert('谢谢你为我点赞')
-          getPraiseNumber()
+          if (JSON.stringify(response.data) == '{}') {
+            $('#praise_btn').text('已赞')
+          }
+          statistics()
         })
         .catch(function (error) {
 	        if (error.response) {
