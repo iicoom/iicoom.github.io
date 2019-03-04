@@ -2,43 +2,21 @@
 
 $(document).ready(function()
 {
-  getVisitNumber()
-  getPraiseNumber()
+  statistics()
+  visit()
 });
 
-window.api_prefix = 'http://www.iwannerfuck.xyz/api/';
+window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
 
-function getVisitNumber () {
+function statistics () {
     axios({
           method: 'get',
-          url: `${api_prefix}visit/number`,
+          url: `${api_prefix}statistics`,
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
-        })
-        .catch(function (error) {
-	        if (error.response) {
-	          console.log(error.response.data);
-	          alert(error.response.data.message)
-	        } else if (error.request) {
-	          console.log(error.request);
-	        } else {
-	          console.log('Error', error.message);
-	        }
-        });
-}
-
-function getPraiseNumber () {
-    axios({
-          method: 'get',
-          url: `${api_prefix}praise/number`,
-          data: {}
-        })
-        .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
+          $('#visit_number').html(response.data.visit_num);
+          $('#praise_number').html(response.data.praise_num)
         })
         .catch(function (error) {
 	        if (error.response) {
@@ -54,13 +32,11 @@ function getPraiseNumber () {
 
 function visit () {
     axios({
-          method: 'post',
+          method: 'get',
           url: `${api_prefix}visit`,
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
         })
         .catch(function (error) {
 	        if (error.response) {
@@ -76,13 +52,15 @@ function visit () {
 
 function praise () {
     axios({
-          method: 'post',
+          method: 'get',
           url: `${api_prefix}praise`,
           data: {}
         })
         .then(function(response) {
-          console.log('response:', response); 
-          alert(response.data);
+          if (JSON.stringify(response.data) == '{}') {
+            $('#praise_btn').text('已赞')
+          }
+          statistics()
         })
         .catch(function (error) {
 	        if (error.response) {
