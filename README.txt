@@ -31,3 +31,5 @@ Credits:
 		Responsive Tools (github.com/ajlkn/responsive-tools)
 
 iicoom.github.io
+
+https://medium.com/@jackme256/vultr-vps%E6%90%AD%E5%BB%BAshadowsocks-ss-%E6%95%99%E7%A8%8B-%E6%96%B0%E6%89%8B%E5%90%91-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-d7082eac2add
