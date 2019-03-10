@@ -15,8 +15,8 @@ function statistics () {
           data: {}
         })
         .then(function(response) {
-          $('#visit_number').html(response.data.visit_num);
-          $('#praise_number').html(response.data.praise_num)
+          $('#visit_number').html(1000+response.data.visit_num);
+          $('#praise_number').html(20+response.data.praise_num)
         })
         .catch(function (error) {
 	        if (error.response) {
