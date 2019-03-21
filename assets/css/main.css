@@ -1912,6 +1912,7 @@ button:disabled,
 	background-color: #61ce70;
 	color: #fff !important;
 	font-weight: bolder;
+	cursor: url(pointer.cur), pointer;
 }
 #main .button.colored:hover {
 	background-color: #0eb2e7;
