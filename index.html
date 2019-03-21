@@ -119,13 +119,20 @@
 				<p><b>4.2 安装shadowsocks</b></p>
 				<h5>第一条命令</h5>
 				<pre>
-					<code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
+					<img class="tooltip1" src="images/copy.svg" data-clipboard-target="#code1" alt="Copy to clipboard">
+					<code id="code1">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
 					<h5>等待下载完成</h5>
 				</pre>
 				<h5>第二条命令</h5>
-				<pre><code>chmod +x shadowsocks.sh</code></pre>
+				<pre>
+					<img class="tooltip2" src="images/copy.svg" data-clipboard-target="#code2" alt="Copy to clipboard">
+					<code id="code2">chmod +x shadowsocks.sh</code>
+				</pre>
 				<h5>第三条命令</h5>
-				<pre><code>./shadowsocks.sh 2>&1 | tee shadowsocks.log</code></pre>
+				<pre>
+					<img class="tooltip3" src="images/copy.svg" data-clipboard-target="#code3" alt="Copy to clipboard">
+					<code id="code3">./shadowsocks.sh 2>&1 | tee shadowsocks.log</code>
+				</pre>
 				<p><strong>中间会提示你输入你的SS SERVER的账号，和端口。不输入就是默认。跑完命令后会出来你的SS客户端的信息。特别注意，由于iphone端的目前只支持到cfb，所以我们选择aes-256-cfb，即7，这一步按回车继续然后需要几分钟的安装过程，请耐心等待出现下面的画面！</strong></p>
 				<img src="./images/ss_info.jpeg" style="width: 65%;height: 65%" alt="">
 				<p>请立即copy下来加以保存。记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method。这时你的专属ss已经搭好了，开始使用吧。</p>
@@ -152,6 +159,8 @@
 			<div class="opration"><button class="button primary" onclick="praise()"><span id="praise_btn">赞</span>|<span id="praise_number"></span></button></div>
 
 		</div>
+				
+
 
 	<!-- Footer -->
 	<footer id="footer">
@@ -195,6 +204,48 @@
 <script src="assets/js/main.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="assets/js/analysis.js"></script>
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.js"></script>
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+<script>
+	const instance1 = new Tooltip($('.tooltip1'), {
+        title: "复制",
+        placement: 'top',
+    });
+    const instance2 = new Tooltip($('.tooltip2'), {
+        title: "复制",
+        placement: 'top',
+    });
+    const instance3 = new Tooltip($('.tooltip3'), {
+        title: "复制",
+        placement: 'top',
+    });
 
+    $(function () {
+        var clipboard1  = new ClipboardJS('.tooltip1');
+        var clipboard2  = new ClipboardJS('.tooltip2');
+        var clipboard3  = new ClipboardJS('.tooltip3');
+        // clipboard实例还可以进行事件的监听
+        clipboard1.on('success', function(e) {
+            // console.info('Action:', e.action);
+            // console.info('Text:', e.text);
+            // console.info('Trigger:', e.trigger);
+            instance1.updateTitleContent('已复制')
+            e.clearSelection();
+        });
+
+        clipboard2.on('success', function(e) {
+            instance2.updateTitleContent('已复制')
+            e.clearSelection();
+        });
+
+        clipboard3.on('success', function(e) {
+            instance3.updateTitleContent('已复制')
+            e.clearSelection();
+        });
+
+    })
+
+</script>
 </body>
 </html>
