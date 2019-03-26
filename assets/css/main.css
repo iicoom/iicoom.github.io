@@ -3844,5 +3844,9 @@ button.primary.icon:before,
     border-radius: 4px;
 }
 
+.bd_weixin_popup {
+	height: 293px !important;
+}
+
 
 

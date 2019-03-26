@@ -18,149 +18,156 @@
 </head>
 <body class="is-preload" oncontextmenu=self.event.returnValue=false>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
 
-		<!-- Header -->
-		<header id="header" class="alt">
-			<span class="logo"><img src="images/logo_onwhite.png" alt="" /></span>
-			<h1>「 Vultr vps搭建属于自己的ss 代理 」</h1>
-			<div class="state_bar">
-				<span class="type">原创</span>
-				<span class="tags">vpn</span>
-				<span class="tags">vps</span>
-				<span class="tags">shadowsockets</span>
-				<span class="tags">vpn-server</span>
-				<span class="tags">vultr</span>
-				<span class="tags">centos</span>
-				<span class="tags" style="margin-right: 10px">ss</span>
-				<span><strong id="visit_number"></strong>&nbsp次阅读 · 读完需要 10 分钟 <b>2018-12-30 发布</b></span>
-			</div>
-		</header>
-
-		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="#intro" class="active">1.选择优质的VPS</a></li>
-				<li><a href="#first">2.注册账号</a></li>
-				<li><a href="#second">3.搭建服务</a></li>
-				<li><a href="#third">4.登录服务器生成SS账号</a></li>
-				<li><a href="#fouth">5.客户端设置</a></li>
-			</ul>
-		</nav>
-
-		<!-- Main -->
-		<div id="main">
-
-			<!-- Introduction -->
-			<section id="intro" class="main">
-				<blockquote style="text-align: left; font-weight: bold;">手把手教你vps搭建属于自己的ss教程，开始科学上网吧（利用vultr，Google, 看youtube1080p无压力）</blockquote>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>1.选择优质的VPS</h2>
-						</header>
-						<p>简单介绍：Vultr作为全球最大的游戏主机提供商背景之一，上线之后以高质的性价比、遍布全球16个数据中心，以及新注册用户不定期有美金赠送，吸引广大的用户。<br>而且操作简单方便，一键部署，性能目前测试非常不错。支付是采用充值的方式，支持国内 <b>支付宝</b> 支付，<b>微信扫码</b> 支付。按照VPS开通使用情况每小时扣款，不象很多其他VPS要求一次买2年或者1年的，非常人性化。</p>
-					</div>
-					<span class="image"><a href="https://www.vultr.com/?ref=7771051-4F" target="blank"><img src="./images/banner.png" width="300" height="250"></a></span>
-
-				</div>
-			</section>
-
-			<!-- First Section -->
-			<section id="first" class="main">
-				<header class="major">
-					<h2>2.注册vultr账号</h2>
-				</header>
-				<p><a href="https://www.vultr.com/?ref=7771051-4F" class="button colored" target="blank">>> 打开 Vultr VPS 官网注册账号</a></p>
-				<p style="color: #222; font-weight: bolder; margin-bottom: 1em">或者打开我的推荐-优惠注册地址（注册会获得50美金账户余额-官方最新活动-进行中）</p>
-				<a href="https://www.vultr.com/?ref=7771051-4F" class="mylink" target="blank">Get started in the Vultr SSD Cloud!</a>
-				<p>进入网站之后填写注册邮箱、密码 （最少10位，要同时有数字和大小写字母） ，点击create account。</p>
-				<img src="./images/account.png" class="myimage" alt="">
-				<p><b>接下来会跳转到充值页面=></b></p>
-				<img src="./images/topup.png" class="myimage" alt="">
-				<p><b>点击付款，跳转到扫码付款页面=></b></p>
-				<img src="./images/paycode.png" class="myimage" alt="">
-				<p>这时就可以用alipay（支付宝），相信大家轻松搞定。</p>
-				<!-- 	<footer class="major">
-					<ul class="actions special">
-						<li><a href="generic.html" class="button">Learn More</a></li>
-					</ul>
-				</footer> -->
-			</section>
-
-			<!-- Second Section -->
-			<section id="second" class="main">
-				<header class="major">
-					<h2>3.搭建服务</h2>
-				</header>
-				<img src="./images/instance.png" class="myimage" alt="">
-				<p><b>然后选择服务器节点位置以及相关配置，按下图依次选择配置：</b></p>
-				<img src="./images/location.png" class="myimage" alt="">
-				<p><b>然后选择操作系统、以及收费级别=></b></p>
-				<img src="./images/price.png" class="myimage" alt="">
-				<p><b>然后会自动跳转到Servers界面=></b></p>
-				<img src="./images/running.png" class="myimage" alt="">
-				<p><b>记录服务器相关信息=></b></p>
-				<img src="./images/password.png" class="myimage" alt="">
-			</section>
-
-			<!-- Get Started -->
-			<section id="third" class="main">
-				<header class="major">
-					<h2>4.使用ssh 终端连接到服务器、生成ss账号</h2>
-				</header>
-				<p><b>4.1. 下载putty：</b><a href="http://pan.baidu.com/s/1jI0T5Fw" target="blank">http://pan.baidu.com/s/1jI0T5Fw</a> 解压运行putty.exe，</p>
-				<img src="./images/putty.jpeg" style="width: 65%;height: 65%" alt="">
-				<p><b>填入刚建好的实例信息=></b></p>
-				<img src="./images/warning.jpeg" style="width: 65%;height: 65%" alt="">
-				<p>​如果这里有对话框弹出，选择是，然后在全黑的屏幕上输入 root ，回车。等五秒，按提示输入vps的密码，(注意：这里强烈建议你直接复制粘贴密码, 不建议手动输入密码,容易出错：</p>
-				<img src="./images/shell.jpeg" style="width: 65%;height: 65%" alt="">
-				<p><b>4.2 安装shadowsocks</b></p>
-				<h5>第一条命令</h5>
-				<pre>
-					<img class="tooltip1" src="images/copy.svg" data-clipboard-target="#code1" alt="Copy to clipboard">
-					<code id="code1">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
-					<h5>等待下载完成</h5>
-				</pre>
-				<h5>第二条命令</h5>
-				<pre>
-					<img class="tooltip2" src="images/copy.svg" data-clipboard-target="#code2" alt="Copy to clipboard">
-					<code id="code2">chmod +x shadowsocks.sh</code>
-				</pre>
-				<h5>第三条命令</h5>
-				<pre>
-					<img class="tooltip3" src="images/copy.svg" data-clipboard-target="#code3" alt="Copy to clipboard">
-					<code id="code3">./shadowsocks.sh 2>&1 | tee shadowsocks.log</code>
-				</pre>
-				<p><strong>中间会提示你输入你的SS SERVER的账号，和端口。不输入就是默认。跑完命令后会出来你的SS客户端的信息。特别注意，由于iphone端的目前只支持到cfb，所以我们选择aes-256-cfb，即7，这一步按回车继续然后需要几分钟的安装过程，请耐心等待出现下面的画面！</strong></p>
-				<img src="./images/ss_info.jpeg" style="width: 65%;height: 65%" alt="">
-				<p>请立即copy下来加以保存。记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method。这时你的专属ss已经搭好了，开始使用吧。</p>
-			</section>
-
-			<!-- Second Section -->
-			<section id="fouth" class="main">
-				<header class="major">
-					<h2>5.客户端设置</h2>
-				</header>
-				<p>提供一个集成了以上客户端的下载地址</p><a href="https://shadowsocks.org/en/download/clients.html" class="mylink">Shadowsockets client</a>
-				<p>点击左边的server选项，点击加好按钮选择服务器节点位置以及相关配置，按下图依次选择配置：</p>
-				<p>考虑到这个网站需要翻墙才能访问，提供几个百度云备用下载地址如下：</p>
-				<a class="mylink" target="blank" href="https://pan.baidu.com/s/1X1rjcHP3SB6EW6pcb2fqPQ">Mac</a><br>
-				<a class="mylink" target="blank" href="https://pan.baidu.com/s/1TQ8mAO_txAzOZJKBHynbVA">Windows</a><br>
-				<a class="mylink" target="blank" href="https://pan.baidu.com/s/1HTmOUuNYW3TLD8qUoGN9nw">安卓</a><br>
-				<a class="mylink" target="blank" href="https://itunes.apple.com/app/outline-app/id1356177741">IOS</a><br>
-				<p>哟哟哟，可以Google和YouTube啦,这世界就在你眼前!</p>
-				<img src="./images/google.png" class="myimage" alt="">
-				<p></p>
-				<p>如果这篇文章帮到了你，那就请为我点个赞吧(∩_∩)</p>
-			</section>
-
-			<div class="opration"><button class="button primary" onclick="praise()"><span id="praise_btn">赞</span>|<span id="praise_number"></span></button></div>
-
+	<!-- Header -->
+	<header id="header" class="alt">
+		<span class="logo"><img src="images/logo_onwhite.png" alt="" /></span>
+		<h1>「 Vultr vps搭建属于自己的ss 代理 」</h1>
+		<div class="state_bar">
+			<span class="type">原创</span>
+			<span class="tags">vpn</span>
+			<span class="tags">vps</span>
+			<span class="tags">shadowsockets</span>
+			<span class="tags">vpn-server</span>
+			<span class="tags">vultr</span>
+			<span class="tags">centos</span>
+			<span class="tags" style="margin-right: 10px">ss</span>
+			<span><strong id="visit_number"></strong>&nbsp次阅读 · 读完需要 10 分钟 <b>2018-12-30 发布</b></span>
 		</div>
-				
+	</header>
 
+	<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li><a href="#intro" class="active">1.选择优质的VPS</a></li>
+			<li><a href="#first">2.注册账号</a></li>
+			<li><a href="#second">3.搭建服务</a></li>
+			<li><a href="#third">4.登录服务器生成SS账号</a></li>
+			<li><a href="#fouth">5.客户端设置</a></li>
+		</ul>
+	</nav>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Introduction -->
+		<section id="intro" class="main">
+			<blockquote style="text-align: left; font-weight: bold;">手把手教你vps搭建属于自己的ss教程，开始科学上网吧（利用vultr，Google, 看youtube1080p无压力）</blockquote>
+			<div class="spotlight">
+				<div class="content">
+					<header class="major">
+						<h2>1.选择优质的VPS</h2>
+					</header>
+					<p>简单介绍：Vultr作为全球最大的游戏主机提供商背景之一，上线之后以高质的性价比、遍布全球16个数据中心，以及新注册用户不定期有美金赠送，吸引广大的用户。<br>而且操作简单方便，一键部署，性能目前测试非常不错。支付是采用充值的方式，支持国内 <b>支付宝</b> 支付，<b>微信扫码</b> 支付。按照VPS开通使用情况每小时扣款，不象很多其他VPS要求一次买2年或者1年的，非常人性化。</p>
+				</div>
+				<span class="image"><a href="https://www.vultr.com/?ref=7771051-4F" target="blank"><img src="./images/banner.png" width="300" height="250"></a></span>
+
+			</div>
+		</section>
+
+		<!-- First Section -->
+		<section id="first" class="main">
+			<header class="major">
+				<h2>2.注册vultr账号</h2>
+			</header>
+			<p><a href="https://www.vultr.com/?ref=7771051-4F" class="button colored" target="blank">>> 打开 Vultr VPS 官网注册账号</a></p>
+			<p style="color: #222; font-weight: bolder; margin-bottom: 1em">或者打开我的推荐-优惠注册地址（注册会获得50美金账户余额-官方最新活动-进行中）</p>
+			<a href="https://www.vultr.com/?ref=7771051-4F" class="mylink" target="blank">Get started in the Vultr SSD Cloud!</a>
+			<p>进入网站之后填写注册邮箱、密码 （最少10位，要同时有数字和大小写字母） ，点击create account。</p>
+			<img src="./images/account.png" class="myimage" alt="">
+			<p><b>接下来会跳转到充值页面=></b></p>
+			<img src="./images/topup.png" class="myimage" alt="">
+			<p><b>点击付款，跳转到扫码付款页面=></b></p>
+			<img src="./images/paycode.png" class="myimage" alt="">
+			<p>这时就可以用alipay（支付宝），相信大家轻松搞定。</p>
+			<!-- 	<footer class="major">
+				<ul class="actions special">
+					<li><a href="generic.html" class="button">Learn More</a></li>
+				</ul>
+			</footer> -->
+		</section>
+
+		<!-- Second Section -->
+		<section id="second" class="main">
+			<header class="major">
+				<h2>3.搭建服务</h2>
+			</header>
+			<img src="./images/instance.png" class="myimage" alt="">
+			<p><b>然后选择服务器节点位置以及相关配置，按下图依次选择配置：</b></p>
+			<img src="./images/location.png" class="myimage" alt="">
+			<p><b>然后选择操作系统、以及收费级别=></b></p>
+			<img src="./images/price.png" class="myimage" alt="">
+			<p><b>然后会自动跳转到Servers界面=></b></p>
+			<img src="./images/running.png" class="myimage" alt="">
+			<p><b>记录服务器相关信息=></b></p>
+			<img src="./images/password.png" class="myimage" alt="">
+		</section>
+
+		<!-- Get Started -->
+		<section id="third" class="main">
+			<header class="major">
+				<h2>4.使用ssh 终端连接到服务器、生成ss账号</h2>
+			</header>
+			<p><b>4.1. 下载putty：</b><a href="http://pan.baidu.com/s/1jI0T5Fw" target="blank">http://pan.baidu.com/s/1jI0T5Fw</a> 解压运行putty.exe，</p>
+			<img src="./images/putty.jpeg" style="width: 65%;height: 65%" alt="">
+			<p><b>填入刚建好的实例信息=></b></p>
+			<img src="./images/warning.jpeg" style="width: 65%;height: 65%" alt="">
+			<p>​如果这里有对话框弹出，选择是，然后在全黑的屏幕上输入 root ，回车。等五秒，按提示输入vps的密码，(注意：这里强烈建议你直接复制粘贴密码, 不建议手动输入密码,容易出错：</p>
+			<img src="./images/shell.jpeg" style="width: 65%;height: 65%" alt="">
+			<p><b>4.2 安装shadowsocks</b></p>
+			<h5>第一条命令</h5>
+			<pre>
+				<img class="tooltip1" src="images/copy.svg" data-clipboard-target="#code1" alt="Copy to clipboard">
+				<code id="code1">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</code>
+				<h5>等待下载完成</h5>
+			</pre>
+			<h5>第二条命令</h5>
+			<pre>
+				<img class="tooltip2" src="images/copy.svg" data-clipboard-target="#code2" alt="Copy to clipboard">
+				<code id="code2">chmod +x shadowsocks.sh</code>
+			</pre>
+			<h5>第三条命令</h5>
+			<pre>
+				<img class="tooltip3" src="images/copy.svg" data-clipboard-target="#code3" alt="Copy to clipboard">
+				<code id="code3">./shadowsocks.sh 2>&1 | tee shadowsocks.log</code>
+			</pre>
+			<p><strong>中间会提示你输入你的SS SERVER的账号，和端口。不输入就是默认。跑完命令后会出来你的SS客户端的信息。特别注意，由于iphone端的目前只支持到cfb，所以我们选择aes-256-cfb，即7，这一步按回车继续然后需要几分钟的安装过程，请耐心等待出现下面的画面！</strong></p>
+			<img src="./images/ss_info.jpeg" style="width: 65%;height: 65%" alt="">
+			<p>请立即copy下来加以保存。记录保存好你的上述信息：Server IP、Server Port、Password、Encryption Method。这时你的专属ss已经搭好了，开始使用吧。</p>
+		</section>
+
+		<!-- Second Section -->
+		<section id="fouth" class="main">
+			<header class="major">
+				<h2>5.客户端设置</h2>
+			</header>
+			<p>提供一个集成了以上客户端的下载地址</p><a href="https://shadowsocks.org/en/download/clients.html" class="mylink">Shadowsockets client</a>
+			<p>点击左边的server选项，点击加好按钮选择服务器节点位置以及相关配置，按下图依次选择配置：</p>
+			<p>考虑到这个网站需要翻墙才能访问，提供几个百度云备用下载地址如下：</p>
+			<a class="mylink" target="blank" href="https://pan.baidu.com/s/1X1rjcHP3SB6EW6pcb2fqPQ">Mac</a><br>
+			<a class="mylink" target="blank" href="https://pan.baidu.com/s/1TQ8mAO_txAzOZJKBHynbVA">Windows</a><br>
+			<a class="mylink" target="blank" href="https://pan.baidu.com/s/1HTmOUuNYW3TLD8qUoGN9nw">安卓</a><br>
+			<a class="mylink" target="blank" href="https://itunes.apple.com/app/outline-app/id1356177741">IOS</a><br>
+			<p>哟哟哟，可以Google和YouTube啦,这世界就在你眼前!</p>
+			<img src="./images/google.png" class="myimage" alt="">
+			<p></p>
+			<p>如果这篇文章帮到了你，那就请为我点个赞吧(∩_∩)</p>
+		</section>
+
+		<div class="opration"><button class="button primary" onclick="praise()"><span id="praise_btn">赞</span>|<span id="praise_number"></span></button></div>
+
+	</div>
+				
+	<div class="bdsharebuttonbox">
+	  <a href="#" class="bds_more" data-cmd="more"></a>
+	  <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	  <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	  <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	  <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	  <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	</div>
 
 	<!-- Footer -->
 	<footer id="footer">
@@ -245,6 +252,8 @@
         });
 
     })
+
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"188"},"image":{"viewList":["weixin","tsina","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 
 </script>
 </body>
