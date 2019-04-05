@@ -30,26 +30,6 @@ function statistics () {
         });
 }
 
-function visit () {
-    axios({
-          method: 'get',
-          url: `${api_prefix}visit`,
-          data: {}
-        })
-        .then(function(response) {
-        })
-        .catch(function (error) {
-	        if (error.response) {
-	          console.log(error.response.data);
-	          alert(error.response.data.message)
-	        } else if (error.request) {
-	          console.log(error.request);
-	        } else {
-	          console.log('Error', error.message);
-	        }
-        });
-}
-
 function praise () {
     axios({
           method: 'get',
