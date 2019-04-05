@@ -3,7 +3,6 @@
 $(document).ready(function()
 {
   statistics()
-  visit()
 });
 
 window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
