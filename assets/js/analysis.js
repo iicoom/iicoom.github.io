@@ -3,7 +3,6 @@
 $(document).ready(function()
 {
   statistics()
-  visit()
 });
 
 window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
@@ -17,26 +16,6 @@ function statistics () {
         .then(function(response) {
           $('#visit_number').html(1000+response.data.visit_num);
           $('#praise_number').html(20+response.data.praise_num)
-        })
-        .catch(function (error) {
-	        if (error.response) {
-	          console.log(error.response.data);
-	          alert(error.response.data.message)
-	        } else if (error.request) {
-	          console.log(error.request);
-	        } else {
-	          console.log('Error', error.message);
-	        }
-        });
-}
-
-function visit () {
-    axios({
-          method: 'get',
-          url: `${api_prefix}visit`,
-          data: {}
-        })
-        .then(function(response) {
         })
         .catch(function (error) {
 	        if (error.response) {
