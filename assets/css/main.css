@@ -3859,5 +3859,47 @@ button.primary.icon:before,
 	height: 100%;
 }
 
+#comment .scale {
+	width: 35%;
+	margin-top: 10px;
+}
+#comment .hide {
+	display: none;
+}
+
+.no_dot {
+	list-style: none;
+}
+.avatar {
+	border: 1px solid #ccc;
+	width: 65px;
+	height: 65px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 2.2em;
+	border-radius: 5px;
+	background: linear-gradient(45deg, rgba(255,0,0,0.5), rgba(0,0,255,0.5));
+	color: #333;
+	float: left;
+}
+.comment {
+	position: relative;
+	padding-left: 80px;
+}
+.comment span {
+	position: absolute;
+	right: 3em;
+	top: -10px;
+}
+.comment .username {
+	color: #15b1e6;
+	font-size: 1.5em;
+}
+.special {
+	width: 30px !important;
+	height: 20px !important;
+	line-height: 20px;
+	margin: 5px 0 15px 0;
+}
 
 
