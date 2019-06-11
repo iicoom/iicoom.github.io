@@ -3900,10 +3900,18 @@ button.primary.icon:before,
 	font-size: 1.2em;
 }
 .special {
-	width: 30px !important;
-	height: 20px !important;
+	min-width: 25px;
+	height: 20px;
 	line-height: 20px;
 	margin: 5px 0 15px 0;
+	padding: 0 1em;
+}
+
+form.reply input {
+	width: 12em;
+    height: 1.6em;
+    line-height: 1.6em;
+    margin-top: 5px;
 }
 
 
