@@ -3869,6 +3869,10 @@ button.primary.icon:before,
 
 .no_dot {
 	list-style: none;
+	padding-left: 0;
+}
+.no_dot li {
+	padding-left: 0;
 }
 .avatar {
 	border: 1px solid #ccc;
@@ -3888,12 +3892,12 @@ button.primary.icon:before,
 }
 .comment span {
 	position: absolute;
-	right: 3em;
+	right: 0;
 	top: -10px;
 }
 .comment .username {
 	color: #15b1e6;
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 .special {
 	width: 30px !important;

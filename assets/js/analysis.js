@@ -90,6 +90,10 @@ function leave_com() {
       }
     })
     .then(function(response) {
+      // console.log(response.data)
+      if (response.data.message) {
+        alert(response.data.message)
+      }
       getComments();
     })
     .catch(function (error) {
