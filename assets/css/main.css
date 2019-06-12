@@ -3886,18 +3886,25 @@ button.primary.icon:before,
 	color: #333;
 	float: left;
 }
-.comment {
+.top_level {
 	position: relative;
-	padding-left: 80px;
 }
-.comment span {
+.wrap {
+	padding-left: 75px;
+	position: relative;
+	padding-bottom: 10px;
+}
+.top_level span {
 	position: absolute;
 	right: 0;
-	top: -10px;
+	bottom: 10px;
 }
-.comment .username {
+.top_level .username {
 	color: #15b1e6;
 	font-size: 1.2em;
+}
+.second_level {
+	padding-left: 75px;
 }
 .special {
 	min-width: 25px;

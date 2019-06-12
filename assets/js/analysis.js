@@ -112,7 +112,7 @@ function leave_com() {
 }
 
 function reply_com(e) {
-  console.log('e', e.getAttribute("id"))
+  // console.log('e', e.getAttribute("id"))
   // const RF = document.ReplyForm;
   const RF = $('form.target')[0];
   // console.log('RF', RF[0])
@@ -168,7 +168,8 @@ function show() {
   $('#first input').removeClass('hide');
 }
 
-function show_reply(e) {  
+function show_reply(e) { 
+  $('.wrap form').removeClass('target').addClass('hide'); 
   $(e).siblings(".hide").removeClass('hide').addClass('target');
 }
 
