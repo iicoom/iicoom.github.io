@@ -80,7 +80,7 @@ function getComments () {
 
 function leave_com() {
   const CF = document.commentForm;
-  console.log('cf', CF)
+  // console.log('cf', CF)
   if (Validate(CF)) {
     axios({
       method: 'post',

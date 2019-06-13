@@ -3804,6 +3804,9 @@ button.primary.icon:before,
 	width: 90%;
 	height: 90%;
 }
+.myimage1 {
+	width: 60%;
+}
 .state_bar span {
 	border-radius: 5px;
 	padding: 2px 4px;
