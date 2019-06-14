@@ -1,18 +1,18 @@
 "use strict";
 
-$(document).ready(function()
-{
-  statistics();
-  getComments();
-});
+// $(document).ready(function()
+// {
+//   statistics();
+//   getComments();
+// });
 
 window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
 // window.api_prefix = 'http://localhost:3004/api/';
 
-function statistics () {
+function statistics (ar_id) {
     axios({
           method: 'get',
-          url: `${api_prefix}statistics`,
+          url: `${api_prefix}statistics?ar_id=${ar_id}`,
           data: {}
         })
         .then(function(response) {
@@ -31,17 +31,17 @@ function statistics () {
         });
 }
 
-function praise () {
+function praise (ar_id) {
     axios({
           method: 'get',
-          url: `${api_prefix}praise`,
+          url: `${api_prefix}praise?ar_id=${ar_id}`,
           data: {}
         })
         .then(function(response) {
           if (JSON.stringify(response.data) == '{}') {
             $('#praise_btn').text('已赞')
           }
-          statistics()
+          statistics(ar_id);
         })
         .catch(function (error) {
 	        if (error.response) {

@@ -175,7 +175,7 @@
 			<div class="qr_code">
 				<img src="./images/qr_code.png" alt="">
 			</div>
-			<button class="button primary" onclick="praise()"><span id="praise_btn">赞</span>|<span id="praise_number"></span></button>
+			<button class="button primary" onclick="praise(0)"><span id="praise_btn">赞</span>|<span id="praise_number"></span></button>
 		</div>
 
 		<div id="comment" class="main">
@@ -287,6 +287,9 @@
         });
 
     })
+
+    statistics(0);
+    getComments();
 </script>
 <!-- <script src="assets/static/api/js/share.js?v=89860593.js"></script> -->
 <script src="assets/js/love.js"></script>
