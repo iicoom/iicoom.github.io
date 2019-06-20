@@ -3900,7 +3900,7 @@ button.primary.icon:before,
 .top_level span {
 	position: absolute;
 	right: 0;
-	bottom: 10px;
+	bottom: -10px;
 }
 .top_level .username {
 	color: #15b1e6;
@@ -3908,6 +3908,9 @@ button.primary.icon:before,
 }
 .second_level {
 	padding-left: 75px;
+}
+.second_level .wrap .content {
+	width: 80%;
 }
 .special {
 	min-width: 25px;
