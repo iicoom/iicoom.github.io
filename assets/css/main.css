@@ -4098,6 +4098,7 @@ form.reply input {
 	display: none;
 }
 .masker {
+	z-index: 10001;
 	position: fixed;
 	left: 0;
 	bottom: 0;
