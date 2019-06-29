@@ -82,6 +82,8 @@ function leave_com() {
   const CF = document.commentForm;
   // console.log('cf', CF)
   if (Validate(CF)) {
+    // show masker
+    $('.masker').removeClass('hide_masker');
     axios({
       method: 'post',
       url: `${api_prefix}leave_comment`,
@@ -97,6 +99,7 @@ function leave_com() {
         alert(response.data.message)
       }
       getComments();
+      $('.masker').addClass('hide_masker');
     })
     .catch(function (error) {
       if (error.response) {
