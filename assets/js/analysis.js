@@ -56,7 +56,7 @@ function praise (ar_id) {
   
 }
 
-function getComments () {
+function getComments (wait_loading) {
     axios({
           method: 'get',
           url: `${api_prefix}comments`,
@@ -65,6 +65,9 @@ function getComments () {
         .then(function(response) {
           // console.log(response.data)
           $('#comment').html(response.data)
+          if (wait_loading) {
+            $('.masker').addClass('hide_masker');
+          }
         })
         .catch(function (error) {
           if (error.response) {
@@ -98,8 +101,7 @@ function leave_com() {
       if (response.data.message) {
         alert(response.data.message)
       }
-      getComments();
-      $('.masker').addClass('hide_masker');
+      getComments('wait_loading');
     })
     .catch(function (error) {
       if (error.response) {
@@ -120,6 +122,8 @@ function reply_com(e) {
   const RF = $('form.target')[0];
   // console.log('RF', RF[0])
   if (Validate(RF)) {
+    // show masker
+    $('.masker').removeClass('hide_masker');
     axios({
       method: 'post',
       url: `${api_prefix}leave_comment`,
@@ -135,7 +139,7 @@ function reply_com(e) {
       if (response.data.message) {
         alert(response.data.message)
       }
-      getComments();
+      getComments('wait_loading');
     })
     .catch(function (error) {
       if (error.response) {
