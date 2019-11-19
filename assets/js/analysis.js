@@ -6,7 +6,8 @@
 //   getComments();
 // });
 
-window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
+// window.api_prefix = 'https://www.iwannerfuck.xyz/api/';
+window.api_prefix = 'https://www.maoshare.xyz/api/';
 // window.api_prefix = 'http://localhost:3004/api/';
 
 function statistics (ar_id) {
