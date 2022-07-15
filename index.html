@@ -1,1 +1,139 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>chat</title><link href="/css/app.3479f11a.css" rel="preload" as="style"><link href="/css/chunk-vendors.00adf2f7.css" rel="preload" as="style"><link href="/js/app.c63a48ca.js" rel="preload" as="script"><link href="/js/chunk-vendors.59cd0c60.js" rel="preload" as="script"><link href="/css/chunk-vendors.00adf2f7.css" rel="stylesheet"><link href="/css/app.3479f11a.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but chat doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.59cd0c60.js"></script><script src="/js/app.c63a48ca.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="id_local_video" style="width:100%;height:500px;display:flex;align-items:center;justify-content:center;"></div>
+<input type="file" id="file">
+<button onclick="startPush()">开始推流</button>
+<button onclick="getFileStream()">获取文件流</button>
+<button onclick="setMirror()">镜像</button>
+<button onclick="setWatermark()">设置水印</button>
+
+<script src="https://video.sdk.qcloudecdn.com/web/TXLivePusher-2.0.0.min.js" charset="utf-8"></script>
+<script>
+	var livePusher = new TXLivePusher();
+
+	livePusher.setRenderView('id_local_video');
+
+	// 设置视频质量
+	livePusher.setVideoQuality('720p');
+	// 设置音频质量
+	livePusher.setAudioQuality('standard');
+	// 自定义设置帧率
+	livePusher.setProperty('setVideoFPS', 25);
+
+	var videoEffectManager = livePusher.getVideoEffectManager();
+
+	videoEffectManager.enableMixing(true);
+
+	videoEffectManager.setMixingConfig({
+		videoWidth: 1280,
+		videoHeight: 720,
+		videoFramerate: 15
+	});
+
+	let cameraStreamId = null
+	let microphoneStreamId = null
+	let screenStreamId = null
+	livePusher.startCamera().then((streamId) => {
+		cameraStreamId = streamId;
+	}).catch((error) => {
+		console.log('打开摄像头失败：'+ error.toString());
+	});
+
+	livePusher.startMicrophone().then((streamId) => {
+		console.log('microphone stream id is ' + streamId);
+		microphoneStreamId = streamId
+	}).catch((error) => {
+		console.log('start microphone error: '+ error.toString());
+	});
+
+	livePusher.startScreenCapture().then((streamId) => {
+		screenStreamId = streamId;
+	}).catch((error) => {
+		console.log('屏幕分享失败：'+ error.toString());
+	});
+
+	let fileStreamId = null
+
+	function getFileStream() {
+		let file = document.getElementById("file").files[0]
+		livePusher.startVirtualCamera(file).then((streamId) => {
+			fileStreamId = streamId;
+		}).catch((error) => {
+			console.log('获取文件流失败'+ error.toString());
+		});
+	}
+
+	let type = 0
+	function setMirror() {
+		type===0?type=1:type=0
+		videoEffectManager.setMirror({
+			streamId: cameraStreamId,
+			mirrorType: type
+		});
+	}
+
+	function setWatermark() {
+		var image = new Image();
+		image.src = './logo.82b9c7a5.png'; // 图片地址注意不要跨域，否则会有跨域问题
+
+		videoEffectManager.setWatermark({
+			image: image,
+			x: 1230,
+			y: 620,
+			width: 100,
+			height: 100,
+			zOrder: 3
+		});
+	}
+
+	videoEffectManager.setLayout([{
+		streamId: fileStreamId,
+		x: 640,
+		y: 360,
+		width: 1280,
+		height: 720,
+		zOrder: 1
+	}, {
+		streamId: cameraStreamId,
+		x: 160,
+		y: 90,
+		width: 320,
+		height: 180,
+		zOrder: 2
+	}, {
+		streamId: microphoneStreamId,
+		x: 160,
+		y: 90,
+		width: 320,
+		height: 180,
+		zOrder: 2
+	}, {
+		streamId: screenStreamId,
+		x: 320,
+		y: 90,
+		width: 320,
+		height: 180,
+		zOrder: 2
+	}]);
+
+
+	function startPush() {
+		// 采集完摄像头和麦克风之后自动推流
+		// Promise.all([livePusher.startCamera(), livePusher.startMicrophone()])
+		// .then(function([c_id, m_id]) {
+		//     console.log(c_id, m_id)
+		//     livePusher.startPush('webrtc://live.foundingaz.com/resynz/t1?txSecret=2c5eecb58706bbf645d8edf2c4a87b83&txTime=62d25a7c');
+		// });
+		livePusher.startPush('webrtc://live.foundingaz.com/resynz/t1?txSecret=2c5eecb58706bbf645d8edf2c4a87b83&txTime=62d25a7c');
+	}
+
+</script>
+</body>
+</html>
