@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as p}from"./chunks/framework.ymTWbDx7.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"vpn/AppleID.md","filePath":"vpn/AppleID.md","lastUpdated":1706934393000}'),a={name:"vpn/AppleID.md"};function n(r,o,s,c,d,l){return t(),p("div")}const m=e(a,[["render",n]]);export{i as __pageData,m as default};

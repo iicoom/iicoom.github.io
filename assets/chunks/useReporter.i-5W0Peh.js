@@ -1,0 +1,1 @@
+import{j as e,a4 as n}from"./framework.ymTWbDx7.js";function r(){async function o(){const t=document.title;await fetch("https://admin.wonima.online/api/visitor",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({referrer:document.referrer||"直接打开",title:t})})}e(()=>{window.location.hostname!=="localhost"&&o()}),n(()=>{})}export{r as u};
