@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as n}from"./chunks/framework.BRCYMVIo.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"vpn/vpn-client.md","filePath":"vpn/vpn-client.md","lastUpdated":1706934393000}'),a={name:"vpn/vpn-client.md"};function p(c,r,o,s,i,d){return n(),t("div")}const m=e(a,[["render",p]]);export{_ as __pageData,m as default};

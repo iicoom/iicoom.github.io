@@ -1,0 +1,1 @@
+import{y as e,a2 as n}from"./framework.BRCYMVIo.js";function i(){async function t(){const o=document.title;await fetch("https://admin.dianlvtong.xyz/api/visitor",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({referrer:document.referrer||"直接打开",title:o})})}e(()=>{window.location.hostname!=="localhost"&&t()}),n(()=>{})}export{i as u};
