@@ -1,1 +1,0 @@
-import{_ as c}from"./index-8b747613.js";import{z as o,D as s,E as t}from"./element-plus-b1d7f0ee.js";import"./echarts-71ab4440.js";const _={};function n(a,e){return o(),s("div",null,e[0]||(e[0]=[t("div",null," 我是你爹来一段文字123abd ",-1),t("div",{class:"test"}," 我是你爹来一段文字123abd ",-1)]))}const l=c(_,[["render",n],["__scopeId","data-v-28cdfcc4"]]);export{l as default};

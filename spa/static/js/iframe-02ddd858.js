@@ -1,1 +1,0 @@
-import{_ as o}from"./index-8b747613.js";import{z as t,D as n,E as r}from"./element-plus-b1d7f0ee.js";import"./echarts-71ab4440.js";const s={};function a(i,e){return t(),n("div",null,e[0]||(e[0]=[r("div",{class:"preview-container"},[r("iframe",{src:"/demo/export_png_pdf",title:"Form Preview"})],-1)]))}const p=o(s,[["render",a]]);export{p as default};
