@@ -1,0 +1,1 @@
+import{y as e,a2 as n}from"./framework.BRCYMVIo.js";function i(){async function o(){const t=document.title;await fetch("https://iicoom.duckdns.org/api/visitor",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({referrer:document.referrer||"直接打开",title:t})})}e(()=>{window.location.hostname!=="localhost"&&o()}),n(()=>{})}export{i as u};
